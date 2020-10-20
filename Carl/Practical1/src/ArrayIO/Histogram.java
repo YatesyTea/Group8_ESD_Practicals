@@ -34,6 +34,14 @@ public class Histogram {
                 gradesList[newInt - 1] += 1;
             }
             
-
+            System.out.print("--- Grades Histogram ---");
+            for(int m = 0; m < numGradeBoundaries; m++){
+                System.out.print("\n");
+                System.out.print(m+1 + " - " + (m+1)*10 + " |  \t");
+                for (int j = 0; j < gradesList[m]; j++){
+                    System.out.print("*");
+                }
+            }
+            System.out.print("\n");
+            }
     }
-}
