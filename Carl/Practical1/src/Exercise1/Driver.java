@@ -1,6 +1,6 @@
-package TriangleProblem;
+package Exercise1;
 
-import TriangleProblem.Triangle;
+import Exercise1.Triangle;
 import java.util.Scanner; 
 /**
  *
