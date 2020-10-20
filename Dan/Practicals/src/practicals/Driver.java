@@ -15,10 +15,9 @@ public class Driver {
      * @param args the command line arguments
      * 
      */
-    public static void main(String[] args) {  
-
-        // Taking input from the command line.
+    public static void main(String[] args) {     
         try {
+            // Taking input from the command line.
             Scanner sc = new Scanner(System.in);
             System.out.println("Please input your sides");
             int x = sc.nextInt();
@@ -32,9 +31,9 @@ public class Driver {
             // Printing result
             System.out.println(result);
         }
-        catch(Exception e){}
-        
-
+        catch(Exception e){
+                System.out.println("Something went wrong!");
+        }
     }
 
 }
