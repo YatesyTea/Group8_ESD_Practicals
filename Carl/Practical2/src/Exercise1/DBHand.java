@@ -66,7 +66,16 @@ public class DBHand {
             sqlException.printStackTrace();
             System.out.println("Error: Something went wrong");
         }
-        
+        finally{
+            try{
+                resultSet.close();
+                statement.close();
+                connection.close();
+            }
+            catch(Exception exception){
+                exception.printStackTrace();
+            }
+        }
         return list;
     }
     
