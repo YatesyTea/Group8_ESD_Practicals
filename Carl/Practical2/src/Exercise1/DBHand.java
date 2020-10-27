@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class DBHand {
     
     static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
-    static final String DATABASE_URL = "jdbc:derby://localhost:1527/MyNewDB";
+    static final String DATABASE_URL = "jdbc:derby://localhost:1527/Grades";
     
     private Connection connection = null;
     private Statement statement = null;

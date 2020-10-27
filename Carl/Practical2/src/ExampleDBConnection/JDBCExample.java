@@ -25,7 +25,7 @@ public class JDBCExample {
             Logger.getLogger(JDBCExample.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            con = DriverManager.getConnection("jdbc:derby://localhost:1527/MyNewDB","CarlBeeston", "UHNy3636"); 
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/Grades","Username", "Password"); 
 // replace your user name with <user> and your password with <passwd> 
         } catch (SQLException ex) {
             Logger.getLogger(JDBCExample.class.getName()).log(Level.SEVERE, null, ex);

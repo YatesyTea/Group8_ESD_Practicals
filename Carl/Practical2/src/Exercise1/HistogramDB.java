@@ -58,7 +58,7 @@ public class HistogramDB {
         DBHand jdbc = new DBHand();
         int count = 0;
         
-        boolean connectionSet = jdbc.setConnection("CarlBeeston","UHNy3636");
+        boolean connectionSet = jdbc.setConnection("Username","Password");
         
         if (connectionSet){
             for(int i=0;i<100;i++){
@@ -76,7 +76,7 @@ public class HistogramDB {
         List list = new ArrayList();
         DBHand jdbc = new DBHand();
         
-        boolean connectionSet = jdbc.setConnection("CarlBeeston","UHNy3636");
+        boolean connectionSet = jdbc.setConnection("Username","Password");
         
         if (connectionSet){
             list = jdbc.getNumbers(query);
@@ -97,7 +97,7 @@ public class HistogramDB {
     
     public static void main(String[] args){
         HistogramDB histo = new HistogramDB();
-        int[] nums = histo.retrieve("select * from CarlBeeston.grades");
+        int[] nums = histo.retrieve("select * from Username.grades");
         
         Histogram hist = new Histogram(nums, 10);
         
