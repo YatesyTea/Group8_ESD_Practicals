@@ -55,14 +55,14 @@ public class HistogramDB {
     }
     
     public int insert(){
-        DBHand jdb = new DBHand();
+        DBHand jdbc = new DBHand();
         int count = 0;
         
-        boolean connectionSet = jdb.setConnection("CarlBeeston","UHNy3636");
+        boolean connectionSet = jdbc.setConnection("CarlBeeston","UHNy3636");
         
         if (connectionSet){
             for(int i=0;i<100;i++){
-                count += jdb.insert("insert into grades (StudentID, grade) values('1',"+ nums[i]+")");
+                count += jdbc.insert("insert into grades (StudentID, grade) values('1',"+ nums[i]+")");
             }
         }
         else{
@@ -74,12 +74,12 @@ public class HistogramDB {
     
     public int[] retrieve(String query){
         List list = new ArrayList();
-        DBHand jdb = new DBHand();
+        DBHand jdbc = new DBHand();
         
-        boolean connectionSet = jdb.setConnection("CarlBeeston","UHNy3636");
+        boolean connectionSet = jdbc.setConnection("CarlBeeston","UHNy3636");
         
         if (connectionSet){
-            list = jdb.getNumbers(query);
+            list = jdbc.getNumbers(query);
         }
         else{
             System.out.println("Error: Connection??");
@@ -97,7 +97,7 @@ public class HistogramDB {
     
     public static void main(String[] args){
         HistogramDB histo = new HistogramDB();
-        int[] nums = histo("select * from CarlBeeston.grades");
+        int[] nums = histo.retrieve("select * from CarlBeeston.grades");
         
         Histogram hist = new Histogram(nums, 10);
         

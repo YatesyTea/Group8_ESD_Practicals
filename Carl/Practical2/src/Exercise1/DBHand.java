@@ -7,6 +7,8 @@ package Exercise1;
 
 import java.sql.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,8 +24,8 @@ public class DBHand {
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
     
-    public DBHand(){ 
-        
+    public DBHand(){
+         
     }
     
     public boolean setConnection(String user, String password){
@@ -79,5 +81,59 @@ public class DBHand {
         return list;
     }
     
+    public String getAllData(String query){
+        String results = null;
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int numberOfColumns = metaData.getColumnCount();
+            results = "Authors Table of Books Database:\n";
+            
+            for (int i =1; i <=numberOfColumns; i++){
+                results += metaData.getColumnName(i) + '\t';
+            }
+            results += '\n';
+            
+            while(resultSet.next()){
+                for(int i =1; i <=numberOfColumns; i++){
+                    results += resultSet.getObject(i).toString() + '\t';
+                }
+                results += '\n';
+            }
+        }
+        catch(SQLException sqlException){
+            sqlException.printStackTrace();
+            results = "Error: Something went wrong.";
+        }
+        finally{
+            try{
+                resultSet.close();
+                statement.close();
+                connection.close();
+            }
+            catch(Exception exception){
+                exception.printStackTrace();
+            }
+        }
+        return results;
+    }
+    
+    public int insert(String sql){
+        int value = 0;
+        try{
+            statement = connection.createStatement();
+            value = statement.executeUpdate(sql);
+        }
+        catch(SQLException excep){
+            Logger.getLogger(DBHand.class.getName()).log(Level.SEVERE, null, excep);
+        }
+        return value;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
     
 }
