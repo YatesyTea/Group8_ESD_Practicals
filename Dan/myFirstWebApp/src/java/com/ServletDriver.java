@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Yates
  */
-public class ServletTriangle extends HttpServlet {
+public class ServletDriver extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +35,10 @@ public class ServletTriangle extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletTriangle</title>");            
+            out.println("<title>Servlet ServletDriver</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ServletTriangle at " + request.getContextPath() + "</h1>");
+            /* Outputs should occur */
             out.println("</body>");
             out.println("</html>");
         }

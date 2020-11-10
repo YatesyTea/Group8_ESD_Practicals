@@ -5,16 +5,16 @@
         <servlet-class>com.ServletOne</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletTriangle</servlet-name>
-        <servlet-class>com.ServletTriangle</servlet-class>
+        <servlet-name>ServletDriver</servlet-name>
+        <servlet-class>com.ServletDriver</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletOne</servlet-name>
         <url-pattern>/ServletOne.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletTriangle</servlet-name>
-        <url-pattern>/ServletTriangle.do</url-pattern>
+        <servlet-name>ServletDriver</servlet-name>
+        <url-pattern>/ServletDriver.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
