@@ -32,10 +32,11 @@ public class ServletDriver extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletDriver</title>");            
+            out.println("<title>Attempt to Drive Triangle</title>");            
             out.println("</head>");
             out.println("<body>");
             /* Outputs should occur */

@@ -1,0 +1,10 @@
+SMAP
+task1_jsp.java
+JSP
+*S JSP
+*F
++ 0 task1.jsp
+WEB-INF/task1.jsp
+*L
+5,25:44
+*E
